@@ -1,0 +1,40 @@
+﻿@model List<Show>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<h2>Show List</h2>
+<a asp-controller="Show" asp-action="Add">Add New Show</a>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Last Episode</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var show in Model)
+        {
+            <tr>
+                <td>@show.Title</td>
+                <td>@show.LastEpisodeSeen</td>
+                <td>
+                    <a asp-controller="Show" asp-action="Edit"
+                        asp-route-id="@show.ShowId">Edit</a>
+                    &nbsp;&nbsp;
+                    <a asp-controller="Show" asp-action="Delete"
+                        asp-route-id="@show.ShowId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
