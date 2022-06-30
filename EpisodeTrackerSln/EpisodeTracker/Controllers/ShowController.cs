@@ -40,6 +40,7 @@ namespace EpisodeTracker.Controllers
                     context.Shows.Update(show);
                 }
                 context.SaveChanges();
+                TempData["IsDataAdded"] = "yes";
                 return RedirectToAction("Index", "Home");
             }
             else

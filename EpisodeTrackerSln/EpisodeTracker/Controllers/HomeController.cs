@@ -23,6 +23,11 @@ namespace EpisodeTracker.Controllers
         public IActionResult Index()
         {
             var shows = episodeContext.Shows.OrderBy(x => x.Title).ToList();
+            ViewBag.IsDataAdded = false;
+            if ((string)TempData["IsDataAdded"] == "yes")
+            {
+                ViewBag.IsDataAdded = true;
+            }
             return View(shows);
         }
 

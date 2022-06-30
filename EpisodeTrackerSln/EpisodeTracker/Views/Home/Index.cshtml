@@ -5,13 +5,22 @@
 }
 
 
-<h2>Show List</h2>
+@if ( ViewBag.IsDataAdded == true)
+{
+    <div class="alert alert-success alert-dismissible">
+        <button class="close" data-dismiss="alert">&times;</button>
+        Added!
+   </div>
+}
+
+<h2 class="text-center text-uppercase bg-warning">:: Episode Show List:: </h2>
 <a asp-controller="Show" asp-action="Add">Add New Show</a>
-<table class="table table-bordered table-striped">
+<table class="table table-bordered table-striped table-hover table-responsive">
     <thead>
         <tr>
-            <th>Title</th>
+            <th class="w-50">Title</th>
             <th>Last Episode</th>
+            <th>&nbsp;</th>
         </tr>
     </thead>
     <tbody>
