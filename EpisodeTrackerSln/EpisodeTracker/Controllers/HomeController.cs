@@ -1,4 +1,5 @@
 ﻿using EpisodeTracker.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace EpisodeTracker.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -20,6 +22,7 @@ namespace EpisodeTracker.Controllers
             this.episodeContext = episodeContext;
         }
 
+        [AllowAnonymous]
         public IActionResult Index()
         {
             var shows = episodeContext.Shows.OrderBy(x => x.Title).ToList();

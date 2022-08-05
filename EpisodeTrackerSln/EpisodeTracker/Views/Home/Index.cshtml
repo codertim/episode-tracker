@@ -1,4 +1,6 @@
 ﻿@model List<Show>
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<User> signInManager
 
 @{
     ViewData["Title"] = "Home Page";
@@ -13,6 +15,9 @@
    </div>
 }
 
+
+@if (signInManager.IsSignedIn(User))
+{
 <h2 class="text-center text-uppercase bg-warning">:: Episode Show List:: </h2>
 <a asp-controller="Show" asp-action="Add">Add New Show</a>
 <table class="table table-bordered table-striped table-hover table-responsive">
@@ -39,7 +44,8 @@
             </tr>
         }
     </tbody>
-</table>
+</table>  
+}
 
 
 

@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace EpisodeTracker.Models
 {
-    public class EpisodeContext : DbContext
+    public class EpisodeContext : IdentityDbContext<User>
     {
         public EpisodeContext(DbContextOptions<EpisodeContext> options)
             : base(options)
@@ -12,6 +13,8 @@ namespace EpisodeTracker.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.Entity<Show>().HasData(
                 new Show
                 {
