@@ -19,11 +19,11 @@
 @if (signInManager.IsSignedIn(User))
 {
 <h2 class="text-center text-uppercase bg-warning">:: Episode Show List:: </h2>
-<a asp-controller="Show" asp-action="Add">Add New Show</a>
+<a asp-controller="Show" asp-action="Add" class="bg-warning text-success"><span class="far fa-plus"></span>&nbsp; Add New Show</a>
 <table class="table table-bordered table-striped table-hover table-responsive">
     <thead>
         <tr>
-            <th class="w-50">Title</th>
+            <th class="w-60">Title</th>
             <th>Last Episode</th>
             <th>&nbsp;</th>
         </tr>
