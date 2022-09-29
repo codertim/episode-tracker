@@ -72,6 +72,8 @@ namespace EpisodeTracker
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllers();   // for attribute routes
+
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

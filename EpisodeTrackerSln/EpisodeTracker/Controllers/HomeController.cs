@@ -34,6 +34,22 @@ namespace EpisodeTracker.Controllers
             return View(shows);
         }
 
+        [AllowAnonymous]
+        [Route("/Version")]
+        public IActionResult Versions()
+        {
+            string version = GetVersion();
+            return Content(version);
+        }
+
+        [NonAction]
+        private String GetVersion()
+        {
+            string version = "1.1.1";   // TODO: store in confie file or db
+
+            return version;
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
