@@ -75,5 +75,19 @@ body {
 
 
 body {
-    background-color: #FDDA0D;
+    background-color: #82AAE3;
+    color: #91D8E4;
 }
+
+#add-show-link {
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+a.update-link {
+    color: #BFEAF5;
+}
+
+/* new color palette - dark to light
+    #82AAE3, #91D8E4, #BFEAF5, #EAFDFC
+*/

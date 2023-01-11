@@ -19,7 +19,9 @@
 @if (signInManager.IsSignedIn(User))
 {
 <h2 class="text-center text-uppercase bg-warning">:: Episode Show List:: </h2>
-<a asp-controller="Show" asp-action="Add" class="bg-warning text-success"><span class="far fa-plus"></span>&nbsp; Add New Show</a>
+<div id="add-show-link">
+        <a asp-controller="Show" asp-action="Add" class="text-primary"><span class="far fa-plus"></span>&nbsp; Add New Show</a>
+</div>
 <table class="table table-bordered table-striped table-hover table-responsive">
     <thead>
         <tr>
@@ -36,10 +38,10 @@
                 <td>@show.LastEpisodeSeen</td>
                 <td>
                     <a asp-controller="Show" asp-action="Edit"
-                        asp-route-id="@show.ShowId">Edit</a>
+                        asp-route-id="@show.ShowId" class="update-link">Edit</a>
                     &nbsp;&nbsp;
                     <a asp-controller="Show" asp-action="Delete"
-                        asp-route-id="@show.ShowId">Delete</a>
+                        asp-route-id="@show.ShowId" class="update-link">Delete</a>
                 </td>
             </tr>
         }
